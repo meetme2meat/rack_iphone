@@ -17,10 +17,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "rack_iphone"
   gem.homepage = "http://github.com/meetme2meat/rack_iphone"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Rack Iphone is  use for auto login from iphone home screen shortcut}
+  gem.description = %Q{Rack Iphone is use for auto login for web app from iphone when activated from home screen shortcut. The Gem is Inspired by work of Jim Hoskins gem rack_iphone_web_app}
   gem.email = "meetme2meat@gmail.com"
-  gem.authors = ["meetme2meat"]
+  gem.authors = ["Viren Negi"]
+  gem.files = Dir.glob('lib/**/*.rb')
+  gem.files.include "rack_iphone.rb"
+  gem.add_runtime_dependency 'rack'
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
