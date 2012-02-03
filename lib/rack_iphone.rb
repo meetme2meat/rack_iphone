@@ -12,7 +12,7 @@ module Rack
 
         if(isFullScreen()){
           
-          if(!document.cookie.match(/_session_id/)){
+          if(!document.cookie.match(/{{REGEX}}/)){
             var storedValues = localStorage.getItem('__cookie__');
               if(storedValues){
                 var values = storedValues.split(';');
@@ -63,7 +63,7 @@ module Rack
           response = Rack::Response.new([], status, headers)
           cookie = String.new
           request.cookies.each_pair do |key,value|
-	     cookie += "#{key}=#{value};"
+	            cookie += "#{key}=#{value};"
           end
           body.each do |part|
             part.gsub!(/<\/head>/, "#{set_cookie(cookie)}</head>")
@@ -79,7 +79,9 @@ module Rack
   protected
   
     def code(resend=false)
-      CODE.gsub('{{RESEND}}', resend.to_s)
+      regex = "_session_id"
+      regex = Rails.configuration.session_options[:key] if Rails.configuration.session_store.name == "ActionDispatch::Session::CookieStore"
+      CODE.gsub('{{RESEND}}', resend.to_s).gsub('{{REGEX}}',regex.to_s)
     end
   
    def set_cookie(cookie)
