@@ -2,7 +2,8 @@
 ===============
 
 
-Description goes here.
+### Description
+
  rack_iphone enable auto login from  iOS Home Screen shortcut
 
  <p><code> sudo gem install rack_iphone </code></p>
@@ -14,9 +15,7 @@ Description goes here.
 
 
 
-
 **Copyright**
-=============`
+==================
 Copyright (c) 2012 meetme2meat. See LICENSE.txt for
 further details.
-
