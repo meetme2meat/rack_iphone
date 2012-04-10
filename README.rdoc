@@ -13,9 +13,6 @@ Description goes here.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 = Caveat 
-* <s> The Current Version only support ActiveRecord::Base.session_store straight </s>
-* <s>If you are Cookie Store kindly fork the gem and make adequate change to the below script contain 
-  if (document.cookie.match(/_session_id/)</s>
 
 
 == Copyright
